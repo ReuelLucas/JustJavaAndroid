@@ -2,9 +2,11 @@
 
 package com.example.android.justjava;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
@@ -23,11 +25,12 @@ import java.text.NumberFormat;
  */
 public class MainActivity extends AppCompatActivity {
     private String nome;
-    private Boolean status;
+    private Boolean status=true;
     private EditText nomeProduto;
+    private Button botao_listar;
 
     DatabaseReference dataBase = FirebaseDatabase.getInstance().getReference();
-    DatabaseReference myRef = dataBase.child("Produtos");
+    DatabaseReference myRef = dataBase.child("ProdutosNovo");
 
 
     @Override
@@ -35,6 +38,23 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         nomeProduto = (EditText) findViewById(R.id.nome_produto);
+        botao_listar= (Button) findViewById(R.id.botao_listar);
+
+        botao_listar.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this,
+                        listarProdutos.class);
+
+                startActivity(intent);
+
+                finish();
+            }
+        });
+
 
     }
 
@@ -64,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void submitOrder(View view) {
         nome = nomeProduto.getText().toString();
-        Produto p = new Produto(nome, status);
+        Produto p = new Produto(nome,status);
         // Push the chat message to the database
         myRef.push().setValue(p);
 
