@@ -59,5 +59,14 @@
         android:onClick="submitOrder"
         />
 
+    <Button
+        android:id="@+id/botao_listar"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Listar Produtos"
+
+        />
+
+
 
 </LinearLayout>
