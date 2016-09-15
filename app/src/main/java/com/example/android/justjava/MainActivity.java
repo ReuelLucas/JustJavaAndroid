@@ -24,7 +24,7 @@ import java.text.NumberFormat;
  * This app displays an order form to order coffee.
  */
 public class MainActivity extends AppCompatActivity {
-    private String nome;
+    private String nome,chave;
     private Boolean status=true;
     private EditText nomeProduto;
     private Button botao_listar;
@@ -84,10 +84,17 @@ public class MainActivity extends AppCompatActivity {
      */
     public void submitOrder(View view) {
         nome = nomeProduto.getText().toString();
-        Produto p = new Produto(nome,status);
-        // Push the chat message to the database
-        myRef.push().setValue(p);
-
+        if(!(nome.isEmpty())) {
+            String chave = myRef.push().getKey();
+            Produto p = new Produto(chave, nome, status);
+            myRef.child(chave).setValue(p);
+            Toast.makeText(MainActivity.this, "Produto: " + nome + "Cadastrado!", Toast.LENGTH_LONG).show();
+            nome = "";
+            nomeProduto.setText(nome.toString());
+        }
+        else{
+            Toast.makeText(MainActivity.this,"Digite o Produto!", Toast.LENGTH_LONG).show();
+        }
 
 
     }
