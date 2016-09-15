@@ -6,14 +6,18 @@ package com.example.android.justjava;
 public class Produto {
     public String nome;
     public Boolean status;
+    public String chave;
 
     public Produto() {
     }
 
-    public Produto(String nome, Boolean status) {
+    public Produto(String chave,String nome, Boolean status) {
+        this.chave = chave;
         this.nome = nome;
         this.status = status;
     }
 
-
+    public String getNome() {
+        return nome;
+    }
 }

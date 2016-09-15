@@ -16,6 +16,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/listView" />
+    <Button
+        android:id="@+id/botao_cadastrar"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Cadastrar Produtos"
 
+        />
 
 </LinearLayout>
