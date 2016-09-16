@@ -86,11 +86,13 @@ public class MainActivity extends AppCompatActivity {
         nome = nomeProduto.getText().toString();
         if(!(nome.isEmpty())) {
             chave = myRef.push().getKey();
+            /*
             Produto p = new Produto(chave, nome, status);
             myRef.child(chave).setValue(p);
             Toast.makeText(MainActivity.this, "Produto: " + nome + "Cadastrado!", Toast.LENGTH_LONG).show();
             nome = "";
             nomeProduto.setText(nome.toString());
+            */
         }
         else{
             Toast.makeText(MainActivity.this,"Digite o Produto!", Toast.LENGTH_LONG).show();
