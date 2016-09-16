@@ -1,24 +1,72 @@
 package com.example.android.justjava;
 
+
 /**
  * Created by Hellow on 12/09/2016.
  */
 public class Produto {
     public String chave;
     public String nome;
-    public Boolean status;
+    public String descricao;
+    public Double preco;
+    public int quantidade;
+    /*
+    private String imgProd;
+    SugestÃƒÂ£o de usar imagem atraves da referencia de string.
+     */
+
+
 
 
     public Produto() {
     }
 
-    public Produto(String chave,String nome, Boolean status) {
+    public Produto(String chave,String nome, String descricao, Double preco,int quantidade) {
         this.chave = chave;
         this.nome = nome;
-        this.status = status;
+        this.descricao = descricao;
+        this.preco = preco;
+        this.quantidade = quantidade;
     }
 
-    public String getNome() {
+    public String getChave(){
+        return chave;
+    }
+    public void setChave(String chave){
+        this.chave = chave;
+    }
+
+    public String getNome(){
         return nome;
     }
+
+    public void setNome(String Nome){
+        this.nome = nome;
+    }
+
+    public String getDescricao(){
+        return descricao;
+    }
+
+    public void setDescricao(String descricao){
+        this.descricao = descricao;
+    }
+
+    public double getPreco(){
+        return preco;
+    }
+
+    public void setPreco(double preco){
+        this.preco = preco;
+    }
+
+    public int getQuantidade(){
+        return quantidade;
+    }
+
+    public void setQuantidade(int quantidade){
+        this.quantidade = quantidade;
+    }
+
+
 }
