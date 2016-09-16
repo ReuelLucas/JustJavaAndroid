@@ -10,11 +10,6 @@ public class Produto {
     public String descricao;
     public Double preco;
     public int quantidade;
-    /*
-    private String imgProd;
-    SugestÃƒÂ£o de usar imagem atraves da referencia de string.
-     */
-
 
 
 
