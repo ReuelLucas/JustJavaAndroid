@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
     public void submitOrder(View view) {
         nome = nomeProduto.getText().toString();
         if(!(nome.isEmpty())) {
-            String chave = myRef.push().getKey();
+            chave = myRef.push().getKey();
             Produto p = new Produto(chave, nome, status);
             myRef.child(chave).setValue(p);
             Toast.makeText(MainActivity.this, "Produto: " + nome + "Cadastrado!", Toast.LENGTH_LONG).show();
