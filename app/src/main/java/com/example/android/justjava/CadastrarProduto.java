@@ -27,8 +27,6 @@ public class CadastrarProduto extends Activity {
         preco = (EditText) findViewById(R.id.preco_prod);
         quantidade = (EditText) findViewById(R.id.quantidade_prod);
 
-
-        Button botao_cadastrar = (Button) findViewById(R.id.btSalvar);
     }
 
     public void clickSalvar(View view) {

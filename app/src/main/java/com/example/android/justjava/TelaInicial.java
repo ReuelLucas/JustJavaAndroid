@@ -31,7 +31,7 @@ public class TelaInicial extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent intent = new Intent();
-                intent.setClass(TelaInicial.this, CadastrarProdutos.class);
+                intent.setClass(TelaInicial.this, CadastrarProduto.class);
 
                 startActivity(intent);
 
